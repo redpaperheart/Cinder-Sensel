@@ -9,7 +9,7 @@ This block was built with version 0.9.1, so 0.9.0 and up should work. This block
 * Second download the Sensel Windows Driver. [Sensel Driver](https://sensel.com/pages/support/#downloads)
   - This block was built with the Windows driver.
   - This block is also configured to work with the default Sensel driver install location ```C:\Program Files\Sensel```
-  - If you install the SDK at a different path you'll want to update either the cinderblock.xml paths or modify the paths in VS after you create a project 
+  - If you install the Driver at a different path you'll want to update either the cinderblock.xml paths or modify the paths in VS after you create a project 
 * Add this block to your Cinder/blocks folder
 * Use TinderBox and create a new Cinder project
 
