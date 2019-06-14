@@ -6,7 +6,7 @@ Cinder block for integrating Sensel Morph SDK
 This block was built with version 0.9.1, so 0.9.0 and up should work. This block is also is currently tested on Windows OS only. 
 
 * First get a Sensel Morph device. [Sensel Morph]( https://sensel.com/pages/the-sensel-morph )
-* Second download the Sensel Windows Driver. [Sensel Driver](https://www.flir.com/products/spinnaker-sdk/)
+* Second download the Sensel Windows Driver. [Sensel Driver](https://sensel.com/pages/support/#downloads)
   - This block was built with the Windows driver.
   - This block is also configured to work with the default Sensel driver install location ```C:\Program Files\Sensel```
   - If you install the SDK at a different path you'll want to update either the cinderblock.xml paths or modify the paths in VS after you create a project 
