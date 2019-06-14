@@ -18,10 +18,10 @@
 		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		85F0A0FC00914DB185D2ACDA /* CinderSenselSample_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 063E8FD4AAFE4CB1BD2B7EA6 /* CinderSenselSample_Prefix.pch */; };
-		1021CC4361E04F699B854A48 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 836363C21C9F4964801352F7 /* CinderApp.icns */; };
-		CFF390F15E4742C6BCC01E31 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B709C4ECE5447A0AF6B10D2 /* Resources.h */; };
-		3291805C4F6D47298B594926 /* CinderSenselSampleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BC57635C4CF4AA8AA24FFFF /* CinderSenselSampleApp.cpp */; };
+		D1D41010C1544FCCBF56502D /* CinderSenselSample_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22B0C872192040338B5770F7 /* CinderSenselSample_Prefix.pch */; };
+		A04A2B5279A9428595DB2701 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1BACB2BEB3C94415B5C1D7BA /* CinderApp.icns */; };
+		B87D9322963943DAA562F076 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EC265A936942D79854B782 /* Resources.h */; };
+		BBBF77C2C4B94711B7A4D37B /* CinderSenselSampleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1509F5A4EFE9430FBDD659CA /* CinderSenselSampleApp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +39,11 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		8D1107320486CEB800E47090 /* CinderSenselSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinderSenselSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BC57635C4CF4AA8AA24FFFF /* CinderSenselSampleApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/CinderSenselSampleApp.cpp; sourceTree = "<group>"; name = CinderSenselSampleApp.cpp; };
-		9B709C4ECE5447A0AF6B10D2 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
-		836363C21C9F4964801352F7 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
-		325D4E8B7F6347D8AB98E118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
-		063E8FD4AAFE4CB1BD2B7EA6 /* CinderSenselSample_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = CinderSenselSample_Prefix.pch; sourceTree = "<group>"; name = CinderSenselSample_Prefix.pch; };
+		1509F5A4EFE9430FBDD659CA /* CinderSenselSampleApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/CinderSenselSampleApp.cpp; sourceTree = "<group>"; name = CinderSenselSampleApp.cpp; };
+		A0EC265A936942D79854B782 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
+		1BACB2BEB3C94415B5C1D7BA /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
+		851D878C1A7848CD9CC0F8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
+		22B0C872192040338B5770F7 /* CinderSenselSample_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = CinderSenselSample_Prefix.pch; sourceTree = "<group>"; name = CinderSenselSample_Prefix.pch; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2BC57635C4CF4AA8AA24FFFF /* CinderSenselSampleApp.cpp */,
+				1509F5A4EFE9430FBDD659CA /* CinderSenselSampleApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -134,8 +134,8 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				9B709C4ECE5447A0AF6B10D2 /* Resources.h */,
-				063E8FD4AAFE4CB1BD2B7EA6 /* CinderSenselSample_Prefix.pch */,
+				A0EC265A936942D79854B782 /* Resources.h */,
+				22B0C872192040338B5770F7 /* CinderSenselSample_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -143,8 +143,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				836363C21C9F4964801352F7 /* CinderApp.icns */,
-				325D4E8B7F6347D8AB98E118 /* Info.plist */,
+				1BACB2BEB3C94415B5C1D7BA /* CinderApp.icns */,
+				851D878C1A7848CD9CC0F8FF /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1021CC4361E04F699B854A48 /* CinderApp.icns in Resources */,
+				A04A2B5279A9428595DB2701 /* CinderApp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3291805C4F6D47298B594926 /* CinderSenselSampleApp.cpp in Sources */,
+				BBBF77C2C4B94711B7A4D37B /* CinderSenselSampleApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

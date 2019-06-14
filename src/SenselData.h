@@ -40,10 +40,6 @@ Peak Force:	Value range: 0 - 1000; Units: grams, mm
 
 #include "sensel.h"
 
-#include "Settings.h"
-
-
-
 using namespace ci;
 using namespace ci::app;
 using namespace std;
@@ -56,7 +52,7 @@ namespace rph {
 	struct SenselDevice{
 		// id to keep track of sensel device
 		int					mId;
-		string 				mSerialNum;
+		string				mSerialNum;
 		
 		// boolean to keep track of if sensel connection exists
 		bool				mSenselConnected;
@@ -75,11 +71,10 @@ namespace rph {
 		~SenselData() { };
 		
 		void						setup( );
-		void 						update();
-		void 						draw();
-		
-		string 						outputToString();
-		
+		void						update();
+		void						draw();
+		void						setMaxForce( float force ){ mMaxForce = force ; }
+
 	  private:
 
 		// Handle that references a Sensel device
@@ -95,12 +90,9 @@ namespace rph {
 
 		// Functions and variables for FBO drawing
 		void						updateSenselForceSurface( int senselIndex );
-		Color 						remapCol( Color col, float force);
+		Color						remapCol( Color col, float force);
 
 		gl::FboRef					mCombinedFbo;
-		void 						renderCombinedFbo();
-		
-		// Singleton for Settings class
-		sensel::Settings  			*mSettings = nullptr;
+		float						mMaxForce				= 25.0;
 	};
 }

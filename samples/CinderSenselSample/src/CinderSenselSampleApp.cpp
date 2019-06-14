@@ -18,19 +18,13 @@ class CinderSenselSampleApp : public App {
 	  void							setup() override;
 	  void							update() override;
 	  void							draw() override;
-
-	  void							mouseDown(MouseEvent event) override;
-	  void							keyDown(KeyEvent event) override;
-	  
+	  	  
 	  // Indivisual Sensel Sensor instances containing force data
 	  rph::SenselData				mSensel;
 
 	  // Functions to save & load frame data to/from JSON
 	  string						mFrame;
-
-	  // Singleton for Settings class
-	  sensel::Settings* mSettings = nullptr;
-
+	  
 	  // OSC string
 	  string						mForceInfo = "";
 
@@ -44,6 +38,9 @@ class CinderSenselSampleApp : public App {
 	  // Functions and variables for UI
 	  void							setupParams();
 	  params::InterfaceGlRef		mParams = nullptr;
+	  float							mFps = 0;
+	  float							mMaxForce = 50.0;	// by default the senselData class sets this to 25 
+														// we can set other values here
 };
 
 void CinderSenselSampleApp::setup(){
@@ -51,14 +48,10 @@ void CinderSenselSampleApp::setup(){
 	mFont = Font("Arial", 19);
 	mTextureFont = gl::TextureFont::create(mFont);
 
-	// setting up singleton object
-	mSettings = sensel::Settings::getInstance();
-
 	// setup sensel
 	mSensel.setup();
+	mSensel.setMaxForce(mMaxForce);
 
-	// setup params
-	setupParams();
 }
 
 void CinderSenselSampleApp::setupParams(){
@@ -72,32 +65,14 @@ void CinderSenselSampleApp::setupParams(){
 	}
 	
 	mParams->addSeparator();
-	mParams->addParam("FPS: ", &mSettings->mFps);
+	mParams->addParam("FPS: ", &mFps);
 
 	mParams->addSeparator();
-
-	mParams->addParam("Draw Sensel", &mSettings->bDrawSensel);
-	mParams->addParam("Sensel Max Force", &mSettings->mMaxForce);
-}
-
-void CinderSenselSampleApp::keyDown(KeyEvent event){
-	if (event.getChar() == 'p') {
-		mSettings->bShowParams = !mSettings->bShowParams;
-		if (mSettings->bShowParams) {
-			mParams->show();
-		}
-		else {
-			mParams->hide();
-		}
-	}
-}
-
-void CinderSenselSampleApp::mouseDown( MouseEvent event )
-{
+	mParams->addParam("Sensel Max Force", &mMaxForce);
 }
 
 void CinderSenselSampleApp::update(){
-	mSettings->mFps = getAverageFps();
+	mFps = getAverageFps();
 	mSensel.update();
 }
 
@@ -105,16 +80,8 @@ void CinderSenselSampleApp::draw(){
 	gl::clear(Color(0.150, 0.150, 0.150));
 	gl::color(Color::white());
 	gl::ScopedMatrices m;
-
-	if (mSettings->bDrawSensel) {
-		mSensel.draw();
-	}
-	mTextureFont->drawString(to_string(mSettings->mFps), vec2(10, getWindowHeight() - mTextureFont->getDescent() * 2));
-
-	// Draw parameters
-	if (mSettings->bShowParams) {
-		mParams->draw();
-	}
+	mSensel.draw();
+	mTextureFont->drawString(to_string(mFps), vec2(10, getWindowHeight() - mTextureFont->getDescent() * 2));
 }
 
 CINDER_APP( CinderSenselSampleApp, RendererGl )

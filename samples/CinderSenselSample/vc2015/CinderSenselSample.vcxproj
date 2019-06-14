@@ -18,7 +18,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{23254FB3-396C-4770-8521-344430300415}</ProjectGuid>
+    <ProjectGuid>{0EB7D155-7B26-4AA0-BA04-093588F24BFB}</ProjectGuid>
     <RootNamespace>CinderSenselSample</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
@@ -209,12 +209,10 @@
   <ItemGroup>
     <ClCompile Include="..\src\CinderSenselSampleApp.cpp" />
     <ClCompile Include="..\..\..\src\SenselData.cpp" />
-    <ClCompile Include="..\..\..\src\Settings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\..\..\src\SenselData.h" />
-    <ClInclude Include="..\..\..\src\Settings.h" />
     <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel.h" />
     <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel_decompress.h" />
     <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel_device.h" />

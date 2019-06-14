@@ -13,28 +13,28 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
     <Filter Include="Blocks">
-      <UniqueIdentifier>{2207324A-E8CF-4125-98B8-6A81A1ABC974}</UniqueIdentifier>
+      <UniqueIdentifier>{5E9E73B7-CAFB-4B33-BA16-68EAE8405236}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Cinder-Sensel">
-      <UniqueIdentifier>{00C44274-F347-4A04-ACCD-2EAFC8FF928C}</UniqueIdentifier>
+      <UniqueIdentifier>{5A11C052-878C-42A1-8957-CCD84A158151}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Cinder-Sensel\src">
-      <UniqueIdentifier>{A853DFF9-EDDD-4376-967B-7AA3642CA898}</UniqueIdentifier>
+      <UniqueIdentifier>{9F5C50E5-068F-424E-A540-EB3577DAE90D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Cinder-Sensel\C:">
-      <UniqueIdentifier>{5C403D2B-67C8-4949-BBE4-6AC8B15A459B}</UniqueIdentifier>
+      <UniqueIdentifier>{EC13F1F0-4600-4392-9BA6-E8CA4A649066}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Cinder-Sensel\C:\Program Files">
-      <UniqueIdentifier>{B905318D-251A-4769-A048-8529C99C208D}</UniqueIdentifier>
+      <UniqueIdentifier>{FA983335-EF07-42B3-B52C-AD3A76FFD06E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Cinder-Sensel\C:\Program Files\Sensel">
-      <UniqueIdentifier>{D6408FF1-F9E1-46F9-B801-97DB1B502F37}</UniqueIdentifier>
+      <UniqueIdentifier>{BD164A7E-CFB7-4E2F-85FB-F2435C35D329}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib">
-      <UniqueIdentifier>{B3E3EA93-E3C5-476E-957A-7968D8F1826C}</UniqueIdentifier>
+      <UniqueIdentifier>{93710814-4E43-47CD-BA5C-1413165F6F94}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib\include">
-      <UniqueIdentifier>{9D35413B-BFD4-4051-8CF5-5D17F19CF8EF}</UniqueIdentifier>
+      <UniqueIdentifier>{5A93C7E5-0C6F-47AF-9700-E28492042575}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -50,13 +50,7 @@
     <ClCompile Include="..\..\..\src\SenselData.cpp">
       <Filter>Blocks\Cinder-Sensel\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\Settings.cpp">
-      <Filter>Blocks\Cinder-Sensel\src</Filter>
-    </ClCompile>
     <ClInclude Include="..\..\..\src\SenselData.h">
-      <Filter>Blocks\Cinder-Sensel\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Settings.h">
       <Filter>Blocks\Cinder-Sensel\src</Filter>
     </ClInclude>
     <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel.h">

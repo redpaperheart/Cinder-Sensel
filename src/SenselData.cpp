@@ -4,9 +4,6 @@
 namespace rph {
 	void SenselData::setup( ){
 
-		// Setting up singleton object
-		mSettings = sensel::Settings::getInstance();
-
 		// Get a list of avaialable Sensel devices
 		senselGetDeviceList(&mList);
 
@@ -47,13 +44,7 @@ namespace rph {
 
 			}
 		}
-
-		gl::Fbo::Format format;
-		format.setSamples( 4 );		// enable 4x antialiasing
-		mCombinedFbo = gl::Fbo::create(int(mSettings->mOutputWidth), int(mSettings->mOutputHeight), format.depthTexture() );
-
 	}
-
 
 	void SenselData::update(){
 
@@ -95,19 +86,15 @@ namespace rph {
 				continue;
 			}
 		}
-		
-		renderCombinedFbo();
 	}
 
-	Color SenselData::remapCol (Color col, float force)
-	{
-		float c = (force/mSettings->mMaxForce) ;
+	Color SenselData::remapCol (Color col, float force){
+		float c = ( force / mMaxForce ) ;
 		col.r = c ;
 		col.g = c ;
 		col.b = c ;
 		return col;
 	}
-
 
 	void SenselData::updateSenselForceSurface( int senselIndex ){
 
@@ -126,64 +113,11 @@ namespace rph {
 		}
 	}
 	
-	string SenselData::outputToString(){
-		
-		Surface32f surf = mCombinedFbo->readPixels32f(mCombinedFbo->getBounds());
-		string forceString = "";
-
-		auto iter = surf.getIter( surf.getBounds() );
-		bool first = true;
-		while( iter.line() ) {
-			while( iter.pixel() ) {
-				if ( !first ) {
-					forceString += ",";
-				} else {
-					first = false;
-				}
-				forceString += to_string(iter.r());
-			}
-		}
-		return forceString;
-	}
-	
-	void SenselData::renderCombinedFbo(){
-		
-		gl::ScopedFramebuffer fbScpFinal( mCombinedFbo );
-		gl::clear( Color( 0.0, 0.0f, 0.0f ) );
-		gl::ScopedViewport scpVpFinal( ivec2(0.0), mCombinedFbo->getSize() );
-		gl::ScopedMatrices matFinal;
-		gl::setMatricesWindow( mCombinedFbo->getSize() );
-		
-		if ( mSenselDeviceVector.size() == 1 ){ //only one sensel connected
-			gl::pushMatrices();
-			gl::popMatrices();
-		}
-		else if ( mSenselDeviceVector.size() == 2 )
-		{
-			{
-				gl::ScopedMatrices m;
-				gl::translate(0, mSettings->mOutputHeight);
-				gl::rotate(-M_PI * 2.0f);
-				gl::scale( mSettings->mOutputHeight/SENSEL_COLS, mSettings->mOutputWidth*0.5f/SENSEL_ROWS);
-				gl::draw( gl::Texture2d::create( *mSenselDeviceVector[0].mSenselForceSurface) );
-			}
-			{
-				gl::ScopedMatrices m;
-				gl::translate(mSettings->mOutputWidth, 0);
-				gl::rotate(M_PI * 2.0f);
-				gl::scale( mSettings->mOutputHeight/SENSEL_COLS, mSettings->mOutputWidth*0.5f/SENSEL_ROWS);
-				gl::draw( gl::Texture2d::create( *mSenselDeviceVector[1].mSenselForceSurface) );
-			}
-		}
-	}
-
-	void SenselData::draw ()
-	{
+	void SenselData::draw () {
 		gl::ScopedMatrices m;
 		for (int i = 0; i < mSenselDeviceVector.size(); i++){
 			gl::draw( gl::Texture2d::create( *mSenselDeviceVector[i].mSenselForceSurface) );
 			gl::translate( 0, SENSEL_ROWS+20 );
 		}
-		gl::draw( mCombinedFbo->getColorTexture() );
 	}
 }
