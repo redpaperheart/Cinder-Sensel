@@ -1,0 +1,88 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Blocks">
+      <UniqueIdentifier>{2207324A-E8CF-4125-98B8-6A81A1ABC974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Cinder-Sensel">
+      <UniqueIdentifier>{00C44274-F347-4A04-ACCD-2EAFC8FF928C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Cinder-Sensel\src">
+      <UniqueIdentifier>{A853DFF9-EDDD-4376-967B-7AA3642CA898}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Cinder-Sensel\C:">
+      <UniqueIdentifier>{5C403D2B-67C8-4949-BBE4-6AC8B15A459B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Cinder-Sensel\C:\Program Files">
+      <UniqueIdentifier>{B905318D-251A-4769-A048-8529C99C208D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Cinder-Sensel\C:\Program Files\Sensel">
+      <UniqueIdentifier>{D6408FF1-F9E1-46F9-B801-97DB1B502F37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib">
+      <UniqueIdentifier>{B3E3EA93-E3C5-476E-957A-7968D8F1826C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib\include">
+      <UniqueIdentifier>{9D35413B-BFD4-4051-8CF5-5D17F19CF8EF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\CinderSenselSampleApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CinderSenselSampleApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\src\SenselData.cpp">
+      <Filter>Blocks\Cinder-Sensel\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Settings.cpp">
+      <Filter>Blocks\Cinder-Sensel\src</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\src\SenselData.h">
+      <Filter>Blocks\Cinder-Sensel\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Settings.h">
+      <Filter>Blocks\Cinder-Sensel\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel.h">
+      <Filter>Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel_decompress.h">
+      <Filter>Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel_device.h">
+      <Filter>Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel_protocol.h">
+      <Filter>Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel_types.h">
+      <Filter>Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
