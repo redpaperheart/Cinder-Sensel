@@ -15,12 +15,12 @@ using namespace std;
 class CinderSenselSampleApp : public App {
   public:
 	  //CinderSenselSampleApp();
-	  void						setup() override;
-	  void						update() override;
-	  void						draw() override;
+	  void							setup() override;
+	  void							update() override;
+	  void							draw() override;
 
-	  void						mouseDown(MouseEvent event) override;
-	  void						keyDown(KeyEvent event) override;
+	  void							mouseDown(MouseEvent event) override;
+	  void							keyDown(KeyEvent event) override;
 	  
 	  // Indivisual Sensel Sensor instances containing force data
 	  rph::SenselData				mSensel;
@@ -38,7 +38,6 @@ class CinderSenselSampleApp : public App {
 	  int							mNumberOfSensel = 0;
 
 	  // For printing information on app screen
-	  //	void						drawSenselInfo();
 	  Font							mFont;
 	  gl::TextureFontRef			mTextureFont;
 
@@ -46,12 +45,6 @@ class CinderSenselSampleApp : public App {
 	  void							setupParams();
 	  params::InterfaceGlRef		mParams = nullptr;
 };
-
-void prepareSettings(CinderSenselSampleApp::Settings* settings){
-	settings->setTitle("Sensel Morph Visualizer");
-	settings->setWindowSize(400, 300);
-	settings->setHighDensityDisplayEnabled(false);
-}
 
 void CinderSenselSampleApp::setup(){
 	// Setting up font

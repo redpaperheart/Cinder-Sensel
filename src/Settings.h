@@ -27,7 +27,7 @@ public:
     
 	// drawing booleans
 	bool				bDrawSensel				= true;
-    bool                bShowParams             = false;
+	bool                bShowParams				= false;
 	bool				bRecordData				= false;
 	bool				bUseRecordedData		= false;
 	bool				bSendOscData			= false;
