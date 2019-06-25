@@ -16,6 +16,7 @@ namespace rph {
 		
 		// Setting up sensel surface
 		mForcesSurfRef = ci::Surface32f::create(mInfo.num_cols, mInfo.num_rows, false);
+		mForcesChannel = ci::Channel32f::create(mInfo.num_cols, mInfo.num_rows);
 		
 		// Set the frame content to scan force data
 		senselSetFrameContent(mHandle, FRAME_CONTENT_PRESSURE_MASK);
@@ -60,17 +61,25 @@ namespace rph {
 	void SenselMorphDevice::updateSenselForceSurface(){
 		if ( mFrame == NULL ) return;
 		
-		float force = 0.0f;
-		ci::Color color;
-//		 Set pixel values of surface variable with force data from sensel
-		for (int i = 0; i < COLS; i++){
-			for( int j = 0 ; j < ROWS; j++ ){
-				force =  mFrame->force_array[i + j * COLS];
-				color = remapCol( ci::Color( 0, 0, 0 ), force );
-				mForcesSurfRef->setPixel( ivec2(i,j), color );
-//				mForcesSurfRef->setPixel( ivec2(i,j), ci::Color::gray(force/mMaxForce) ); 
-			}
-		}
+		
+		memcpy(mForcesChannel->getData(), mFrame->force_array, COLS * ROWS * 4);
+		
+//		gl::draw( gl::Texture2d::create( myChannel ) );
+		
+		//mForcesSurfRef->getChannelRed().getData()
+		
+		
+//		float force = 0.0f;
+//		ci::Color color;
+////		 Set pixel values of surface variable with force data from sensel
+//		for (int i = 0; i < COLS; i++){
+//			for( int j = 0 ; j < ROWS; j++ ){
+//				force =  mFrame->force_array[i + j * COLS];
+//				color = remapCol( ci::Color( 0, 0, 0 ), force );
+//				mForcesSurfRef->setPixel( ivec2(i,j), color );
+////				mForcesSurfRef->setPixel( ivec2(i,j), ci::Color::gray(force/mMaxForce) );
+//			}
+//		}
 //		auto iter = mForcesSurfRef->getIter( mForcesSurfRef->getBounds() );
 ////		bool first = true;
 //		while( iter.line() ) {
@@ -82,6 +91,7 @@ namespace rph {
 	}
 	
 	void SenselMorphDevice::draw () {
-		gl::draw( gl::Texture2d::create( *mForcesSurfRef ) );
+//		gl::draw( gl::Texture2d::create( *mForcesSurfRef ) );
+		gl::draw( gl::Texture2d::create( *mForcesChannel ) );
 	}
 }

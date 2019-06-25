@@ -67,6 +67,7 @@ namespace rph {
 		
 		// surface variable to draw final fbo texture
 		Surface32fRef		mForcesSurfRef;
+		Channel32fRef 		mForcesChannel;
 		vector<string>		mRecordedData;
 		
 		// Handle that references a Sensel device
