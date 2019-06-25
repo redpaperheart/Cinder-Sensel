@@ -57,13 +57,14 @@ namespace rph {
 		void setup(SenselDeviceID deviceId);
 		void update();
 		void draw();
+		void updateForceChannel();
 		
 		// id to keep track of sensel device
 //		int					mId;
 		string				mSerialNum;
 		
 		// boolean to keep track of if sensel connection exists
-		bool				mSenselConnected;
+		bool				mConnected;
 		
 		// surface variable to draw final fbo texture
 //		Surface32fRef		mForcesSurfRef;
@@ -78,8 +79,8 @@ namespace rph {
 	  private:
 		
 		// Functions and variables for FBO drawing
-		void						updateSenselForceSurface();
-		Color						remapCol( Color col, float force);
+		
+//		Color						remapCol( Color col, float force);
 		
 		
 		// Sensor info from the Sensel device

@@ -28,8 +28,9 @@ namespace rph {
 	void SenselMorphManager::update(){
 
 		for ( int i = 0; i < mDevices.size(); i++ ){
-			if( mDevices[i]->mSenselConnected ){
+			if( mDevices[i]->mConnected ){
 				mDevices[i]->update();
+				mDevices[i]->updateForceChannel();
 			} else {
 				// try to reconnect
 //				senselGetDeviceList(&mDeviceList);

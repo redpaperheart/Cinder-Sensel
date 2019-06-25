@@ -27,14 +27,14 @@ namespace rph {
 		// Start scanning the Sensel device
 		senselStartScanning(mHandle);
 		
-		mSenselConnected = true; // Sensel device is connected
+		mConnected = true; // Sensel device is connected
 	}
 
 	void SenselMorphDevice::update(){
 		// Read all available data from the Sensel device
 		SenselStatus status = senselReadSensor(mHandle);
 		if (status == SENSEL_ERROR ) {
-			mSenselConnected = false;
+			mConnected = false;
 		} else {
 			// Get number of frames available in the data read from the sensor
 			unsigned int num_frames = 0;
@@ -46,19 +46,19 @@ namespace rph {
 					CI_LOG_E("Sensen error.");
 				}
 			}
-			updateSenselForceSurface();
+//			updateSenselForceSurface();
 		}
 	}
 
-	Color SenselMorphDevice::remapCol (Color col, float force){
-		float c = ( force / mMaxForce ) ;
-		col.r = c ;
-		col.g = c ;
-		col.b = c ;
-		return col;
-	}
+//	Color SenselMorphDevice::remapCol (Color col, float force){
+//		float c = ( force / mMaxForce ) ;
+//		col.r = c ;
+//		col.g = c ;
+//		col.b = c ;
+//		return col;
+//	}
 
-	void SenselMorphDevice::updateSenselForceSurface(){
+	void SenselMorphDevice::updateForceChannel(){
 		if ( mFrame == NULL ) return;
 		for (int i = 0; i < COLS * ROWS; i++){
 			mFrame->force_array[i] /= mMaxForce ;
