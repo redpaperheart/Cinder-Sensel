@@ -27,9 +27,6 @@ Peak Force:	Value range: 0 - 1000; Units: grams, mm
 #include "cinder/Log.h"
 #include "cinder/gl/gl.h"
 #include "cinder/app/RendererGl.h"
-#include "cinder/Camera.h"
-#include "cinder/CameraUi.h"
-#include "cinder/gl/Batch.h"
 #include "cinder/gl/Fbo.h"
 #include "cinder/gl/GlslProg.h"
 #include "cinder/gl/Texture.h"
@@ -45,54 +42,50 @@ using namespace ci::app;
 using namespace std;
 
 namespace rph {
-	static const char* CONTACT_STATE_STRING[] = { "CONTACT_INVALID","CONTACT_START", "CONTACT_MOVE", "CONTACT_END" };
-	static const int SENSEL_ROWS = 105;
-	static const int SENSEL_COLS = 185;
 
-	struct SenselDevice{
+	//	static const char* CONTACT_STATE_STRING[] = { "CONTACT_INVALID","CONTACT_START", "CONTACT_MOVE", "CONTACT_END" };
+
+	class SenselMorphDevice{
+		
+	  public:
+		static const int ROWS = 105;
+		static const int COLS = 185;
+		
+		SenselMorphDevice() {};
+		~SenselMorphDevice() {};
+		
+		void setup(SenselDeviceID deviceId);
+		void update();
+		void draw();
+		
 		// id to keep track of sensel device
-		int					mId;
+//		int					mId;
 		string				mSerialNum;
 		
 		// boolean to keep track of if sensel connection exists
 		bool				mSenselConnected;
-
+		
 		// surface variable to draw final fbo texture
-		Surface32fRef		mSenselForceSurface;
+		Surface32fRef		mForcesSurfRef;
 		vector<string>		mRecordedData;
-
-	};
-
-	class SenselData{
 		
-	  public:
-		
-		SenselData() { };
-		~SenselData() { };
-		
-		void						setup( );
-		void						update();
-		void						draw();
-		void						setMaxForce( float force ){ mMaxForce = force ; }
-
-	  private:
-
 		// Handle that references a Sensel device
-		SENSEL_HANDLE				mHandles[SENSEL_MAX_DEVICES] = { NULL };
-		// List of all available Sensel devices
-		SenselDeviceList			mList;
-		// Sensor info from the Sensel device
-		SenselSensorInfo			mSensorInfos[SENSEL_MAX_DEVICES] = { NULL };
+		SENSEL_HANDLE				mHandle = NULL;
 		// SenselFrame data that will hold the forces
-		SenselFrameData				*mFrames[SENSEL_MAX_DEVICES] = { NULL };
-
-		vector< SenselDevice >		mSenselDeviceVector;
-
+		SenselFrameData				*mFrame = NULL;
+		
+	  private:
+		
 		// Functions and variables for FBO drawing
-		void						updateSenselForceSurface( int senselIndex );
+		void						updateSenselForceSurface();
 		Color						remapCol( Color col, float force);
+		
+		
+		// Sensor info from the Sensel device
+		SenselSensorInfo			mInfo;
+		
+		
 
-		gl::FboRef					mCombinedFbo;
-		float						mMaxForce				= 25.0;
+		float						mMaxForce = 25.0;
 	};
 }
