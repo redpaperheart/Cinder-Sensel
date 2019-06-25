@@ -47,12 +47,6 @@
     <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\..\src\SenselData.cpp">
-      <Filter>Blocks\Cinder-Sensel\src</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\..\src\SenselData.h">
-      <Filter>Blocks\Cinder-Sensel\src</Filter>
-    </ClInclude>
     <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel.h">
       <Filter>Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib\include</Filter>
     </ClInclude>
@@ -68,10 +62,22 @@
     <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel_types.h">
       <Filter>Blocks\Cinder-Sensel\C:\Program Files\Sensel\SenselLib\include</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\..\src\SenselMorphDevice.cpp">
+      <Filter>Blocks\Cinder-Sensel\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SenselMorphManager.cpp">
+      <Filter>Blocks\Cinder-Sensel\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SenselMorphDevice.h">
+      <Filter>Blocks\Cinder-Sensel\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SenselMorphManager.h">
+      <Filter>Blocks\Cinder-Sensel\src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
