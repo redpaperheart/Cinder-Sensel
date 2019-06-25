@@ -207,12 +207,14 @@
   <ItemGroup />
   <ItemGroup />
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\SenselMorphDevice.cpp" />
+    <ClCompile Include="..\..\..\src\SenselMorphManager.cpp" />
     <ClCompile Include="..\src\CinderSenselSampleApp.cpp" />
-    <ClCompile Include="..\..\..\src\SenselData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\SenselMorphDevice.h" />
+    <ClInclude Include="..\..\..\src\SenselMorphManager.h" />
     <ClInclude Include="..\include\Resources.h" />
-    <ClInclude Include="..\..\..\src\SenselData.h" />
     <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel.h" />
     <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel_decompress.h" />
     <ClInclude Include="C:\Program Files\Sensel\SenselLib\include\sensel_device.h" />
