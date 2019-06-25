@@ -15,7 +15,7 @@ namespace rph {
 		senselGetSensorInfo(mHandle, &mInfo);
 		
 		// Setting up sensel surface
-		mForcesSurfRef = ci::Surface32f::create(mInfo.num_cols, mInfo.num_rows, false);
+//		mForcesSurfRef = ci::Surface32f::create(mInfo.num_cols, mInfo.num_rows, false);
 		mForcesChannel = ci::Channel32f::create(mInfo.num_cols, mInfo.num_rows);
 		
 		// Set the frame content to scan force data
@@ -60,26 +60,27 @@ namespace rph {
 
 	void SenselMorphDevice::updateSenselForceSurface(){
 		if ( mFrame == NULL ) return;
-		
-		
+		for (int i = 0; i < COLS * ROWS; i++){
+			mFrame->force_array[i] /= mMaxForce ;
+		}
 		memcpy(mForcesChannel->getData(), mFrame->force_array, COLS * ROWS * 4);
 		
 //		gl::draw( gl::Texture2d::create( myChannel ) );
-		
 		//mForcesSurfRef->getChannelRed().getData()
-		
-		
 //		float force = 0.0f;
 //		ci::Color color;
 ////		 Set pixel values of surface variable with force data from sensel
+//		float max = 0;
 //		for (int i = 0; i < COLS; i++){
 //			for( int j = 0 ; j < ROWS; j++ ){
+//				max = math<float>::max( max, mFrame->force_array[i + j * COLS]);
 //				force =  mFrame->force_array[i + j * COLS];
 //				color = remapCol( ci::Color( 0, 0, 0 ), force );
 //				mForcesSurfRef->setPixel( ivec2(i,j), color );
 ////				mForcesSurfRef->setPixel( ivec2(i,j), ci::Color::gray(force/mMaxForce) );
 //			}
 //		}
+//		CI_LOG_I("max: " << max);
 //		auto iter = mForcesSurfRef->getIter( mForcesSurfRef->getBounds() );
 ////		bool first = true;
 //		while( iter.line() ) {

@@ -66,7 +66,7 @@ namespace rph {
 		bool				mSenselConnected;
 		
 		// surface variable to draw final fbo texture
-		Surface32fRef		mForcesSurfRef;
+//		Surface32fRef		mForcesSurfRef;
 		Channel32fRef 		mForcesChannel;
 		vector<string>		mRecordedData;
 		
