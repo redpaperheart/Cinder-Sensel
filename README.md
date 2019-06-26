@@ -5,7 +5,7 @@ Cinder block for integrating Sensel Morph SDK
 This Block does not cover all functionality that is provided by the Sensel SDK, but it helps setting up all header and libraries paths.
 
 ##### Adding this block to Cinder
-This block was built with version 0.9.1, so 0.9.0 and up should work. This block is also is currently tested on Windows OS only.
+This block was built with version 0.9.1, so 0.9.0 and up should work. This block has been tested on OSX and Windows 10.
 
 * First get a Sensel Morph device. [Sensel Morph]( https://sensel.com/pages/the-sensel-morph )
 * Second download the Sensel Driver. [Sensel Driver](https://sensel.com/pages/support)
