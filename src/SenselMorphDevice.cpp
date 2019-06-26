@@ -60,7 +60,8 @@ namespace rph {
 			CI_LOG_I(ci::toString(deviceList.devices[di].serial_num) << " == " << mSerialNum);
 			if( ci::toString(deviceList.devices[di].serial_num) == mSerialNum ) {
 				CI_LOG_I("device found again: " << mSerialNum);
-				senselOpenDeviceByID(&mHandle, deviceList.devices[di].idx);
+				SenselStatus status = senselOpenDeviceByID(&mHandle, deviceList.devices[di].idx);
+				if (status == SENSEL_ERROR) return;
 				senselSetFrameContent(mHandle, FRAME_CONTENT_PRESSURE_MASK);
 //				senselGetSensorInfo(mHandle, &mSensorInfo);
 //				senselAllocateFrameData(mHandle, &mFrame);
