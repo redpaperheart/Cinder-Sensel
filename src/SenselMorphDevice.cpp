@@ -63,8 +63,6 @@ namespace rph {
 				SenselStatus status = senselOpenDeviceByID(&mHandle, deviceList.devices[di].idx);
 				if (status == SENSEL_ERROR) return;
 				senselSetFrameContent(mHandle, FRAME_CONTENT_PRESSURE_MASK);
-//				senselGetSensorInfo(mHandle, &mSensorInfo);
-//				senselAllocateFrameData(mHandle, &mFrame);
 				senselStartScanning(mHandle);
 				mConnected = true; // Sensel device is reconnected
 			}
