@@ -18,7 +18,6 @@
 
 		<platform os="macosx">
 			<includePath absolute="true">/usr/local/include</includePath>
-		  <!-- <headerPattern absolute="true">/usr/local/include/*.h</headerPattern> -->
 			<dynamicLibrary absolute="true">/usr/local/lib/libSensel.dylib</dynamicLibrary>
 			<dynamicLibrary absolute="true">/usr/local/lib/libSenselDecompress.dylib</dynamicLibrary>
 		</platform>

@@ -7,16 +7,9 @@
 
 #pragma once
 
-//#include <sstream>
-//#include <iostream>
-
 #include "cinder/app/App.h"
 #include "cinder/Log.h"
 #include "cinder/gl/gl.h"
-//#include "cinder/app/RendererGl.h"
-//#include "cinder/gl/Fbo.h"
-//#include "cinder/gl/Texture.h"
-//#include "cinder/Json.h"
 
 #include "sensel.h"
 #include "SenselMorphDevice.h"
@@ -33,15 +26,13 @@ namespace rph {
 		SenselMorphManager() {};
 		~SenselMorphManager() {};
 		
-		void						setup( );
-		void						update();
-		void						draw();
+		virtual void setup( );
+		virtual void update();
+		virtual void draw();
 		
-//		void						setMaxForce( float force ){ mMaxForce = force ; }
-		float						mMaxForce = 25.0;
+		float mMaxForce = 25.0;
 		
-	  private:
-		
+	  protected:
 		vector<SenselMorphDevice*>	mDevices;
 		
 	};

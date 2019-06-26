@@ -48,11 +48,11 @@ namespace rph {
 		SenselMorphDevice() {};
 		~SenselMorphDevice() {};
 		
-		void setup(SenselDeviceID deviceId);
-		void update();
-		void draw();
-		void updateForceChannel( float maxForce = 1.0f );
-		void reconnect();
+		virtual void setup(SenselDeviceID deviceId);
+		virtual void update();
+		virtual void draw();
+		virtual void updateForceChannel( float maxForce = 1.0f );
+		virtual void reconnect();
 		
 		string				mSerialNum = "";
 		
@@ -68,7 +68,7 @@ namespace rph {
 		// SenselFrame data that will hold the forces
 		SenselFrameData		*mFrame = NULL;
 		
-	  private:
+	  protected:
 		
 		// Sensor info from the Sensel device
 		SenselSensorInfo	mInfo;
