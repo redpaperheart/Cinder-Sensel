@@ -10,7 +10,7 @@
 	  url="https://github.com/redpaperheart/Cinder-Sensel"
 		git="https://github.com/redpaperheart/Cinder-Sensel.git"
 		>
-	  <supports os="msw" />
+		<supports os="msw" />
 		<supports os="macosx" />
 	  <includePath>src</includePath>
 	  <sourcePattern>src/*.cpp</sourcePattern>
@@ -24,21 +24,12 @@
 
 	  <platform os="msw">
 			<includePath absolute="true">C:/Program Files/Sensel/SenselLib/include</includePath>
-		  <headerPattern absolute="true">C:/Program Files/Sensel/SenselLib/include/*.h</headerPattern>
-	    <platform config="release">
-	      <libraryPath absolute="true">C:/Program Files/Sensel/SenselLib/$(PlatformTarget)</libraryPath>
-	      <staticLibrary absolute="true">LibSensel.lib</staticLibrary>
-	      <staticLibrary absolute="true">LibSenselDecompress.lib</staticLibrary>
-	      <buildCopy>C:/Program Files/Sensel/SenselLib/$(PlatformTarget)/LibSensel.dll</buildCopy>
-	      <buildCopy>C:/Program Files/Sensel/SenselLib/$(PlatformTarget)/LibSenselDecompress.dll</buildCopy>
-	    </platform>
-	    <platform config="debug">
-	      <libraryPath absolute="true">C:/Program Files/Sensel/SenselLib/$(PlatformTarget)</libraryPath>
-	      <staticLibrary absolute="true">LibSensel.lib</staticLibrary>
-	      <staticLibrary absolute="true">LibSenselDecompress.lib</staticLibrary>
-	      <buildCopy>C:/Program Files/Sensel/SenselLib/$(PlatformTarget)/LibSensel.dll</buildCopy>
-	      <buildCopy>C:/Program Files/Sensel/SenselLib/$(PlatformTarget)/LibSenselDecompress.dll</buildCopy>
-	    </platform>
+			<headerPattern absolute="true">C:/Program Files/Sensel/SenselLib/include/*.h</headerPattern>
+			<libraryPath absolute="true">C:/Program Files/Sensel/SenselLib/$(PlatformTarget)</libraryPath>
+			<staticLibrary absolute="true">LibSensel.lib</staticLibrary>
+			<staticLibrary absolute="true">LibSenselDecompress.lib</staticLibrary>
+			<buildCopy>C:/Program Files/Sensel/SenselLib/$(PlatformTarget)/LibSensel.dll</buildCopy>
+			<buildCopy>C:/Program Files/Sensel/SenselLib/$(PlatformTarget)/LibSenselDecompress.dll</buildCopy>
 	  </platform>
 	</block>
 </cinder>
