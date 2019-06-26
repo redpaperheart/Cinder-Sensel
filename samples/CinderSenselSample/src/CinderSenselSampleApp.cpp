@@ -20,46 +20,38 @@ class CinderSenselSampleApp : public App {
 	  // Indivisual Sensel Sensor instances containing force data
 	rph::SenselMorphManager		mSenselMorphManager;
 
-	
 	  // Params & Debug
 	void						setupParams();
 	params::InterfaceGlRef		mParams = nullptr;
 	gl::TextureFontRef			mTextureFont;
-	float						mFps = 0;
-	float						mMaxForce = 50.0;	// by default the senselData class sets this to 25
-														// we can set other values here
+	
 };
 
 void prepareSettings( CinderSenselSampleApp::Settings* settings )
 {
 	settings->setTitle( "Sensel Morph Sample" );
-//	settings->setWindowSize(400, 300);
 	settings->setHighDensityDisplayEnabled( true );
 }
 
 void CinderSenselSampleApp::setup(){
-	mTextureFont = gl::TextureFont::create(Font("Arial", 19));
+	setupParams();
 
 	// setup sensel
 	mSenselMorphManager.setup();
-	mSenselMorphManager.setMaxForce(mMaxForce);
-
 }
 
 void CinderSenselSampleApp::setupParams(){
+	mTextureFont = gl::TextureFont::create(Font("Arial", 19));
 	if (mParams == nullptr) {
-		mParams = params::InterfaceGl::create("General Settings", ivec2(250, 150));
+		mParams = params::InterfaceGl::create("Settings", ivec2(250, 150));
 		mParams->setPosition(ivec2(350, 20));
 	} else {
 		mParams->clear();
 	}
-	mParams->addSeparator();
-	mParams->addParam("FPS: ", &mFps);
-	mParams->addParam("Sensel Max Force", &mMaxForce);
+	mParams->addParam("Sensel Max Force", &mSenselMorphManager.mMaxForce).min(1.0f).step(0.1f);
 }
 
 void CinderSenselSampleApp::update(){
-	mFps = getAverageFps();
 	mSenselMorphManager.update();
 }
 
@@ -70,7 +62,9 @@ void CinderSenselSampleApp::draw(){
 	
 	mSenselMorphManager.draw();
 	
-	mTextureFont->drawString(to_string(mFps), vec2(10, getWindowHeight() - mTextureFont->getDescent() * 2));
+	if (mParams) mParams->draw();
+	if (mTextureFont) mTextureFont->drawString(to_string(getAverageFps()), vec2(10, getWindowHeight() - mTextureFont->getDescent() * 2));
+	
 }
 
 CINDER_APP( CinderSenselSampleApp, RendererGl, prepareSettings )

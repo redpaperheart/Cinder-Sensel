@@ -1,12 +1,11 @@
 //
-//  SenselData.h
+//  SenselMorphDevice.h
 //
-//  Created by Shuvashis Das on 10/16/18.
+//  Created by Daniel Scheibel on 6/23/19.
 //
 //
 
 /* -- info from api - primer
-
 Sensor is made of a grid of 185 columns x 105 rows of sensels
 Accelerometer: Value range: 0-1; Units: Gs
 Force array: Value range: 0-8192; Units: grams
@@ -15,24 +14,19 @@ ID: Value range: 0 - 15
 Coordinates: Value range: 0 - 240, 0 - 139
 Area: Value range: 0 - 33360; Units: square mm
 Peak Force:	Value range: 0 - 1000; Units: grams, mm
-
 */
 
 #pragma once
 
-#include <sstream>
-#include <iostream>
+//#include <sstream>
+//#include <iostream>
 
 #include "cinder/app/App.h"
 #include "cinder/Log.h"
 #include "cinder/gl/gl.h"
-#include "cinder/app/RendererGl.h"
-#include "cinder/gl/Fbo.h"
-#include "cinder/gl/GlslProg.h"
-#include "cinder/gl/Texture.h"
-#include "cinder/gl/VboMesh.h"
-#include "cinder/CinderMath.h"
-#include "cinder/ImageIo.h"
+//#include "cinder/app/RendererGl.h"
+//#include "cinder/gl/Texture.h"
+//#include "cinder/CinderMath.h"
 #include "cinder/Json.h"
 
 #include "sensel.h"
@@ -57,37 +51,27 @@ namespace rph {
 		void setup(SenselDeviceID deviceId);
 		void update();
 		void draw();
-		void updateForceChannel();
+		void updateForceChannel( float maxForce = 1.0f );
+		void reconnect();
 		
-		// id to keep track of sensel device
-//		int					mId;
-		string				mSerialNum;
+		string				mSerialNum = "";
 		
 		// boolean to keep track of if sensel connection exists
 		bool				mConnected;
 		
 		// surface variable to draw final fbo texture
-//		Surface32fRef		mForcesSurfRef;
 		Channel32fRef 		mForcesChannel;
-		vector<string>		mRecordedData;
 		
 		// Handle that references a Sensel device
-		SENSEL_HANDLE				mHandle = NULL;
+		SENSEL_HANDLE		mHandle = NULL;
+		
 		// SenselFrame data that will hold the forces
-		SenselFrameData				*mFrame = NULL;
+		SenselFrameData		*mFrame = NULL;
 		
 	  private:
 		
-		// Functions and variables for FBO drawing
-		
-//		Color						remapCol( Color col, float force);
-		
-		
 		// Sensor info from the Sensel device
-		SenselSensorInfo			mInfo;
+		SenselSensorInfo	mInfo;
 		
-		
-
-		float						mMaxForce = 25.0;
 	};
 }
