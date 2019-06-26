@@ -8,7 +8,7 @@ This Block does not cover all functionality that is provided by the Sensel SDK, 
 This block was built with version 0.9.1, so 0.9.0 and up should work. This block is also is currently tested on Windows OS only.
 
 * First get a Sensel Morph device. [Sensel Morph]( https://sensel.com/pages/the-sensel-morph )
-* Second download the Sensel Driver. [Sensel Driver](https://www.flir.com/products/spinnaker-sdk/)
+* Second download the Sensel Driver. [Sensel Driver](https://sensel.com/pages/support)
   - This block is configured to work with the default Sensel driver install location `C:\Program Files\Sensel` on windows and `/usr/local/include`, `/usr/local/lib` on mac.
   - If you install the SDK at a different path you'll need to update all include paths
 
