@@ -2,30 +2,21 @@ Cinder-Sensel
 ===================
 Cinder block for integrating Sensel Morph SDK
 
-## Work in Progress
-
-Currently still writing and rewriting...
-
-While the classes themselves might not make perfect sense right now, they are great examples on how to quickly get the sensel morph to work. 
+This Block does not cover all functionality that is provided by the Sensel SDK, but it helps setting up all header and libraries paths.
 
 ##### Adding this block to Cinder
 This block was built with version 0.9.1, so 0.9.0 and up should work. This block is also is currently tested on Windows OS only.
 
 * First get a Sensel Morph device. [Sensel Morph]( https://sensel.com/pages/the-sensel-morph )
-* Second download the Sensel Windows Driver. [Sensel Driver](https://www.flir.com/products/spinnaker-sdk/)
-  - This block was built with the Windows driver.
-  - This block is also configured to work with the default Sensel driver install location ```C:\Program Files\Sensel```
-  - If you install the SDK at a different path you'll want to update either the cinderblock.xml paths or modify the paths in VS after you create a project
-* Add this block to your Cinder/blocks folder
-* Use TinderBox and create a new Cinder project
+* Second download the Sensel Driver. [Sensel Driver](https://www.flir.com/products/spinnaker-sdk/)
+  - This block is configured to work with the default Sensel driver install location `C:\Program Files\Sensel` on windows and `/usr/local/include`, `/usr/local/lib` on mac.
+  - If you install the SDK at a different path you'll need to update all include paths
 
-A sample project is included with the block. CinderSenselSample is a very simple barebones example that draws the sensel pressure points.
+A sample project is included with the block. CinderSenselSample is a very simple barebones example that draws the sensel's force data.
 
 ##### Tips and Gotchas
-- This block was tested with at most two Sensel Morph devices running simultaneoulsy.
+- This block was tested with at most two Sensel Morph devices running simultaneously.
 
-##### TODOS
-- Test how many Sensel Morph devices can be run at the same time.
 
 License
 -------
